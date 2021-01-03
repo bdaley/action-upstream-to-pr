@@ -1,0 +1,29 @@
+{
+  "name": "action-upstream-to-pr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "act -j upstream_pr",
+    "build": "ncc build src/index.js --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdaley/action-upstream-to-pr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL3",
+  "bugs": {
+    "url": "https://github.com/bdaley/action-upstream-to-pr/issues"
+  },
+  "homepage": "https://github.com/bdaley/action-upstream-to-pr#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.26.1",
+    "husky": "^4.3.6"
+  }
+}
