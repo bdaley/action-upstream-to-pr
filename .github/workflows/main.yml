@@ -17,13 +17,13 @@ jobs:
       - name: Hello world action step (LOCAL)
         if: ${{ env.ACT }}
         uses: ./action-upstream-to-pr
-        id: hello
+        id: hello-local
         with:
           who-to-greet: 'Mona the Octocat'
       - name: Hello world action step
         if: ${{ !env.ACT }}
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: hello-prod
         with:
           who-to-greet: 'Mona the Octocat'          
       # Use the output from the `hello` step
