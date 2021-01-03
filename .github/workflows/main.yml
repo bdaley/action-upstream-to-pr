@@ -13,12 +13,19 @@ jobs:
         with:
           path: "action-upstream-to-pr" # bug: https://github.com/RobotsAndPencils/1password-action/pull/46
       - name: View contents
-        run: ls -al dist/      
-      - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
+        run: pwd && ls -al     
+      - name: Hello world action step (LOCAL)
+        if: ${{ env.ACT }}
+        uses: ./action-upstream-to-pr
         id: hello
         with:
           who-to-greet: 'Mona the Octocat'
+      - name: Hello world action step
+        if: ${{ !env.ACT }}
+        uses: ./ # Uses an action in the root directory
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'          
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
