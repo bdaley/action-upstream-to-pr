@@ -9,7 +9,6 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-        if: ${{ env.ACT }}
         with:
           path: "action-upstream-to-pr" # bug: https://github.com/RobotsAndPencils/1password-action/pull/46
       - name: View contents
